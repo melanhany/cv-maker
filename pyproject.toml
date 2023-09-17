@@ -12,6 +12,7 @@ psycopg2-binary = "^2.9.7"
 django-debug-toolbar = "^4.2.0"
 black = "^23.9.1"
 django-stubs = {extras = ["compatible-mypy"], version = "^4.2.4"}
+django-phonenumber-field = "^7.1.0"
 
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
