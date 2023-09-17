@@ -4,6 +4,8 @@ from phonenumber_field.modelfields import PhoneNumberField  # type: ignore
 
 class UserProfile(models.Model):
     # user field
+    first_name: models.CharField = models.CharField(max_length=100)
+    last_name: models.CharField = models.CharField(max_length=100)
     job_title: models.CharField = models.CharField(max_length=100)
     email: models.EmailField = models.EmailField()
     phone_number: PhoneNumberField = PhoneNumberField(blank=True)
