@@ -136,6 +136,7 @@ files = [
 
 [package.dependencies]
 Django = ">=3.2"
+phonenumbers = {version = ">=7.0.2", optional = true, markers = "extra == \"phonenumbers\""}
 
 [package.extras]
 phonenumbers = ["phonenumbers (>=7.0.2)"]
@@ -259,6 +260,17 @@ python-versions = ">=3.7"
 files = [
     {file = "pathspec-0.11.2-py3-none-any.whl", hash = "sha256:1d6ed233af05e679efb96b1851550ea95bbb64b7c490b0f5aa52996c11e92a20"},
     {file = "pathspec-0.11.2.tar.gz", hash = "sha256:e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"},
+]
+
+[[package]]
+name = "phonenumbers"
+version = "8.13.20"
+description = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+optional = false
+python-versions = "*"
+files = [
+    {file = "phonenumbers-8.13.20-py2.py3-none-any.whl", hash = "sha256:97f151fc904b0d6274dd92b02c82a7936e7dcaf9c7204f2f3e9c7ed0381f5098"},
+    {file = "phonenumbers-8.13.20.tar.gz", hash = "sha256:bf2b35a806d37979e5361109429da46d9a047e59d9af98639d733c834e7dab22"},
 ]
 
 [[package]]
@@ -486,4 +498,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "803e0f67c4d98625706ea47325a83555f655daa377da6e0893e54dcd86926f31"
+content-hash = "8dd655b21fab00439d8971c37435e337eaef79ed9b18e5d7157d672b681668ba"
