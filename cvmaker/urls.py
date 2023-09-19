@@ -19,10 +19,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import URLPattern, URLResolver, path, include
+from cv.views import user_profile_view
 
 urlpatterns: list[URLPattern | URLResolver] = [
     path("admin/", admin.site.urls),
     path("__debug__/", include(debug_toolbar.urls)),
+    path("nuhuh/", user_profile_view),
 ]
 
 if settings.DEBUG:

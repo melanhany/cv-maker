@@ -39,7 +39,7 @@ class Experience(models.Model):
 
 class Skill(models.Model):
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE)
-    skill_name: models.CharField = models.CharField(max_length=100)
+    name: models.CharField = models.CharField(max_length=100)
     proficiency: models.CharField = models.CharField(max_length=50)
 
 
