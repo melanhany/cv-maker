@@ -120,3 +120,5 @@ AUTH_USER_MODEL = "core.User"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+DATE_INPUT_FORMATS = ["%d-%m-%Y"]

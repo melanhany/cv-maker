@@ -3,8 +3,16 @@
 
 {% block content %}
 <form method='POST'> {% csrf_token %}
+    Resume
     {% crispy user_profile_form %}
+    Education
     {% crispy education_form %}
+    Experience
+    {% crispy experience_form %}
+    Skills
+    {% crispy skill_form %}
+    Languages
+    {% crispy language_form %}
     <input type='submit' value='Save'/>
 </form>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-
+from django.conf import settings
 from .models import UserProfile, Education, Experience, Skill, Language
 
 
@@ -16,27 +16,36 @@ class UserProfileForm(forms.ModelForm):
             "address",
             "image",
         ]
+        # widgets = {"phone_number": forms.NumberInput(attrs={"type": "phone"})}
 
 
 class EducationForm(forms.ModelForm):
     class Meta:
         model = Education
-        fields = ["institution", "degree", "major", "start_date", "end_date"]
+        exclude = ["resume"]
+        widgets = {
+            "start_date": forms.DateInput(attrs={"type": "date"}, format="%d/%m/%Y"),
+            "end_date": forms.DateInput(attrs={"type": "date"}, format="%d/%m/%Y"),
+        }
 
 
 class ExperienceForm(forms.ModelForm):
     class Meta:
         model = Experience
-        fields = ["position", "company_name", "description", "start_date", "end_date"]
+        exclude = ["resume"]
+        widgets = {
+            "start_date": forms.DateInput(attrs={"type": "date"}),
+            "end_date": forms.DateInput(attrs={"type": "date"}),
+        }
 
 
 class SkillForm(forms.ModelForm):
     class Meta:
         model = Skill
-        fields = ["name", "proficiency"]
+        exclude = ["resume"]
 
 
 class LanguageForm(forms.ModelForm):
     class Meta:
         model = Language
-        fields = ["name", "level"]
+        exclude = ["resume"]
