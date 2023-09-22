@@ -20,13 +20,15 @@ class UserProfileForm(forms.ModelForm):
 
 
 class EducationForm(forms.ModelForm):
+    start_date = forms.DateField(
+        input_formats=["%d-%m-%Y", "%d/%m/%Y", "%d/%m/%Y"],
+        widget=forms.DateInput(attrs={"type": "date"}),
+    )
+    end_date = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}))
+
     class Meta:
         model = Education
         exclude = ["resume"]
-        widgets = {
-            "start_date": forms.DateInput(attrs={"type": "date"}, format="%d/%m/%Y"),
-            "end_date": forms.DateInput(attrs={"type": "date"}, format="%d/%m/%Y"),
-        }
 
 
 class ExperienceForm(forms.ModelForm):

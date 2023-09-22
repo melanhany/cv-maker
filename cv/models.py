@@ -24,6 +24,7 @@ class Education(models.Model):
     institution: models.CharField = models.CharField(max_length=255)
     degree: models.CharField = models.CharField(max_length=100)
     major: models.CharField = models.CharField(max_length=100)
+    description: models.TextField = models.TextField(blank=True)
     start_date: models.DateField = models.DateField(blank=False, null=False)
     end_date: models.DateField = models.DateField(blank=False, null=False)
 

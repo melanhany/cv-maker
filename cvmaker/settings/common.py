@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from pickle import FALSE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -98,6 +99,7 @@ LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 
 USE_I18N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -120,5 +122,12 @@ AUTH_USER_MODEL = "core.User"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
-DATE_INPUT_FORMATS = ["%d-%m-%Y"]
+DATE_INPUT_FORMATS = [
+    "%d-%m-%Y",  # '25-10-2006'
+    "%d/%m/%Y",  # '25/10/2006'
+    "%d/%m/%y",  # '25/10/06'
+    "%d %b %Y",  # '25 Oct 2006'
+    "%d %b, %Y",  # '25 Oct, 2006'
+    "%d %B %Y",  # '25 October 2006'
+    "%d %B, %Y",  # '25 October, 2006'
+]
